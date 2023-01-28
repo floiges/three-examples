@@ -4,11 +4,14 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src/script.js'),
-  output:
-  {
-    filename: 'bundle.[contenthash].js',
-    path: path.resolve(__dirname, '../dist')
+  entry: {
+    planet: path.resolve(__dirname, '../src/planet.js'),
+    base: path.resolve(__dirname, '../src/base.js'),
+  },
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: '[name].js',
+
   },
   devtool: 'source-map',
   plugins:
@@ -19,8 +22,26 @@ module.exports = {
         ]
       }),
       new HtmlWebpackPlugin({
+        filename: 'planet.html',
         template: path.resolve(__dirname, '../src/index.html'),
-        minify: true
+        // 是否将生成的静态资源插入模板中
+        inject: true,
+        minify: true,
+        // 输出的html文件引入的入口chunk
+        // vendor 是指提取涉及 node_modules 中的公共模块
+        // manifest 是对 vendor 模块做的缓存
+        chunks: ['manifest', 'vendor', 'planet'],
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'base.html',
+        template: path.resolve(__dirname, '../src/index.html'),
+        // 是否将生成的静态资源插入模板中
+        inject: true,
+        minify: true,
+        // 输出的html文件引入的入口chunk
+        // vendor 是指提取涉及 node_modules 中的公共模块
+        // manifest 是对 vendor 模块做的缓存
+        chunks: ['manifest', 'vendor', 'base'],
       }),
       new MiniCSSExtractPlugin()
     ],
