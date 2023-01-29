@@ -1,14 +1,9 @@
-import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { sizes, addResizeEventListener } from './common';
+import './style.css';
 
 // 来个基础纹理例子
-
-// 定义渲染尺寸
-const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight
-}
 
 // 初始化渲染器
 const canvas = document.querySelector('canvas.webgl');
@@ -92,16 +87,7 @@ scene.add(cube)
 // scene.add(circle);
 
 // 页面缩放事件监听
-window.addEventListener('resize', () => {
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-  // 更新渲染
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-  // 更新相机
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
-});
+addResizeEventListener()
 
 const tick = () => {
   controls.update();

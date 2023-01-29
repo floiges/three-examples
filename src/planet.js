@@ -1,12 +1,7 @@
-import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-
-// 定义渲染尺寸
-const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight
-}
+import { sizes, addResizeEventListener } from './common';
+import './style.css';
 
 // 初始化渲染器
 const canvas = document.querySelector('canvas.webgl');
@@ -89,16 +84,7 @@ for (let i = 0; i < 500; i++) {
 scene.add(stars);
 
 // 页面缩放事件监听
-window.addEventListener('resize', () => {
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-  // 更新渲染
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-  // 更新相机
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
-});
+addResizeEventListener();
 
 let rot = 0;
 
