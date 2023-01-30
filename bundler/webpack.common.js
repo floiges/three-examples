@@ -3,16 +3,35 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
+// 入口
+const entrys = ['planet', 'base', 'rain']
+
+const generateEntrys = (entrys) => {
+  return entrys.reduce((prev, entry) => {
+    prev[entry] = path.resolve(__dirname, `../src/${entry}.js`)
+    return prev
+  }, {})
+}
+
+const generateHtmlWebPackPlugins = (entrys) => {
+  return entrys.map(entry => new HtmlWebpackPlugin({
+    filename: `${entry}.html`,
+    template: path.resolve(__dirname, '../src/index.html'),
+    // 是否将生成的静态资源插入模板中
+    inject: true,
+    minify: true,
+    // 输出的html文件引入的入口chunk
+    // vendor 是指提取涉及 node_modules 中的公共模块
+    // manifest 是对 vendor 模块做的缓存
+    chunks: ['manifest', 'vendor', entry],
+  }) )
+}
+
 module.exports = {
-  entry: {
-    planet: path.resolve(__dirname, '../src/planet.js'),
-    base: path.resolve(__dirname, '../src/base.js'),
-    rain: path.resolve(__dirname, '../src/rain.js'),
-  },
+  entry: generateEntrys(entrys),
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
-
   },
   devtool: 'source-map',
   plugins:
@@ -22,39 +41,7 @@ module.exports = {
           { from: path.resolve(__dirname, '../static') }
         ]
       }),
-      new HtmlWebpackPlugin({
-        filename: 'planet.html',
-        template: path.resolve(__dirname, '../src/index.html'),
-        // 是否将生成的静态资源插入模板中
-        inject: true,
-        minify: true,
-        // 输出的html文件引入的入口chunk
-        // vendor 是指提取涉及 node_modules 中的公共模块
-        // manifest 是对 vendor 模块做的缓存
-        chunks: ['manifest', 'vendor', 'planet'],
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'base.html',
-        template: path.resolve(__dirname, '../src/index.html'),
-        // 是否将生成的静态资源插入模板中
-        inject: true,
-        minify: true,
-        // 输出的html文件引入的入口chunk
-        // vendor 是指提取涉及 node_modules 中的公共模块
-        // manifest 是对 vendor 模块做的缓存
-        chunks: ['manifest', 'vendor', 'base'],
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'rain.html',
-        template: path.resolve(__dirname, '../src/index.html'),
-        // 是否将生成的静态资源插入模板中
-        inject: true,
-        minify: true,
-        // 输出的html文件引入的入口chunk
-        // vendor 是指提取涉及 node_modules 中的公共模块
-        // manifest 是对 vendor 模块做的缓存
-        chunks: ['manifest', 'vendor', 'rain'],
-      }),
+      ...generateHtmlWebPackPlugins(entrys),
       new MiniCSSExtractPlugin()
     ],
   module:

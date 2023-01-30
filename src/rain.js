@@ -16,8 +16,11 @@ const scene = new THREE.Scene();
 
 // 初始化相机
 const camera = new THREE.PerspectiveCamera(60, sizes.width / sizes.height, 1, 1000);
+// 相机位置
 camera.position.set(0, 0, 1);
+// 看向原点
 camera.lookAt(0, 0, 0);
+// 相机默认是看向z轴负方向的
 // 设置相机的旋转角度，望向天空
 camera.rotation.x = 1.16;
 camera.rotation.y = -0.12;
