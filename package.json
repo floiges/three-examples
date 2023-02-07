@@ -8,6 +8,7 @@
     "dev": "webpack serve --config ./bundler/webpack.dev.js"
   },
   "dependencies": {
+    "dat.gui": "^0.7.9",
     "three": "^0.125.1"
   },
   "devDependencies": {

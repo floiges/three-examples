@@ -2,13 +2,21 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
+const fs = require('fs')
 
 // 入口
-const entrys = ['planet', 'base', 'rain']
+const entrys = ['planet', 'base', 'rain', 'room']
 
 const generateEntrys = (entrys) => {
   return entrys.reduce((prev, entry) => {
-    prev[entry] = path.resolve(__dirname, `../src/${entry}.js`)
+    let filePath = `../src/${entry}`
+    try {
+      const isDir = fs.lstatSync(path.resolve(__dirname, filePath)).isDirectory()
+      filePath = isDir ? `${filePath}/index.js` : `${filePath}.js`
+      prev[entry] = path.resolve(__dirname, filePath)
+    } catch (error) {
+      prev[entry] = path.resolve(__dirname, `${filePath}.js`)
+    }
     return prev
   }, {})
 }
