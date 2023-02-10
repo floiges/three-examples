@@ -11,7 +11,6 @@ import SideWall from '../objects/SideWall';
 import Roof from '../objects/Roof';
 import Win from '../objects/Win';
 import Door from '../objects/Door';
-import { sizes } from '../../common';
 import { addFlower, addTable } from '../objects/Model';
 import Vase from '../objects/Vase';
 import Ball from '../objects/Ball';
