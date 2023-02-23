@@ -1,8 +1,9 @@
 import { AxesHelper, Color, Fog, Raycaster, Vector2, Vector3 } from 'three';
+import Stats from 'three/examples/jsm/libs/stats.module'
 import Template from '../../common/Template';
+import { addOrbitControls } from '../../common/control/orbitControls'
 import Ground from '../objects/Ground';
 import { addAmbientLight, addDirectionalLight } from './light';
-import { addOrbitControls } from '../control/orbitControls'
 import { Gui } from '../tools/gui'
 import Floor from '../objects/Floor';
 import Box from '../objects/Box'
@@ -48,10 +49,16 @@ export default class Director extends Template {
 
     this.Controls = Gui()
 
+    //创建stats对象
+    this.stats = new Stats()
+    //stats.domElement:web页面上输出计算结果,一个div元素，
+    document.body.appendChild(this.stats.domElement)
+
     this.animate()
 
     // 开关门动画
     window.addEventListener('click', this.onMouseDown.bind(this))
+
   }
 
   /**
@@ -161,6 +168,7 @@ export default class Director extends Template {
   }
 
   animate() {
+    this.stats.update()
     if (this.Controls.showAxes) {
       this.scene.add(this.axesHelper)
     } else {

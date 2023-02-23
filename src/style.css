@@ -14,3 +14,12 @@ body {
   left: 0;
   outline: none;
 }
+
+#tooltip {
+  position: absolute;
+  z-index: 2;
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  visibility: hidden;
+}

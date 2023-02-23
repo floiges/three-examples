@@ -7,7 +7,8 @@ export default class SideWall extends BaseObject {
 
     const wallGeometry = this.drawShape()
     const wallMaterial = new MeshLambertMaterial({
-      color: 0xe5d890
+      color: 0xe5d890,
+      // wireframe: true //线条模式渲染mesh对应的三角形数据
     })
     this.instance = new Mesh(wallGeometry, wallMaterial)
   }

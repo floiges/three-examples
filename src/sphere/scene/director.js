@@ -1,6 +1,6 @@
-import { CubeCamera, LinearMipMapLinearFilter, RGBAFormat, RGBFormat, Vector3, WebGLCubeRenderTarget } from 'three'
+import { CubeCamera, LinearMipMapLinearFilter, RGBAFormat, Vector3, WebGLCubeRenderTarget } from 'three'
 import Template from '../../common/Template'
-import { addOrbitControls } from '../control/orbitControls'
+import { addOrbitControls } from '../../common/control/orbitControls'
 import { initBox } from '../objects/Box'
 import { initSphere } from '../objects/Sphere'
 

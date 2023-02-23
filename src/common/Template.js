@@ -1,5 +1,6 @@
 import { Color, PerspectiveCamera, Scene, Vector3, WebGLRenderer } from 'three'
-import { addResizeEventListener, sizes } from '../common'
+import { addResizeEventListener, sizes } from '.'
+import '../style.css'
 
 export default class Template {
   constructor() {
