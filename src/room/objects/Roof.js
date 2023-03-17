@@ -1,5 +1,5 @@
 import { BoxGeometry, Mesh, MeshLambertMaterial, RepeatWrapping, TextureLoader } from 'three';
-import BaseObject from './Base';
+import BaseObject from '../../common/objects/Base';
 
 export default class Roof extends BaseObject {
   constructor() {

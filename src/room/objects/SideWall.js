@@ -1,5 +1,5 @@
 import { ExtrudeGeometry, Mesh, MeshLambertMaterial, Shape } from 'three';
-import BaseObject from './Base';
+import BaseObject from '../../common/objects/Base';
 
 export default class SideWall extends BaseObject {
   constructor() {

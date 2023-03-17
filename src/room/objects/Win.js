@@ -1,5 +1,5 @@
 import { BoxGeometry, ExtrudeGeometry, Group, Mesh, MeshLambertMaterial, MeshPhysicalMaterial, Path, Shape } from 'three';
-import BaseObject from './Base';
+import BaseObject from '../../common/objects/Base';
 
 export default class Win extends BaseObject {
   constructor() {

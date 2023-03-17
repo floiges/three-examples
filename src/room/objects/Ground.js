@@ -1,5 +1,5 @@
 import { Mesh, MeshLambertMaterial, PlaneGeometry, RepeatWrapping, TextureLoader } from 'three';
-import BaseObject from './Base';
+import BaseObject from '../../common/objects/Base';
 
 export default class Ground extends BaseObject {
   constructor() {

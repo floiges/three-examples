@@ -1,5 +1,5 @@
 import { Mesh, MeshLambertMaterial, SphereGeometry, TextureLoader } from 'three';
-import BaseObject from './Base';
+import BaseObject from '../../common/objects/Base';
 
 export default class Ball extends BaseObject {
   constructor() {

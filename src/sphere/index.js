@@ -1,4 +1,5 @@
 import Director from './scene/director'
+import '../style.css'
 
 /**
  * 360 全景

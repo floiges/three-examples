@@ -1,5 +1,5 @@
 import { BoxGeometry, ExtrudeGeometry, Group, Mesh, MeshLambertMaterial, Path, Shape, TextureLoader } from 'three';
-import BaseObject from './Base';
+import BaseObject from '../../common/objects/Base';
 
 export default class Door extends BaseObject {
   constructor() {

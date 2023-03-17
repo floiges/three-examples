@@ -1,5 +1,5 @@
 import { ExtrudeGeometry, Mesh, MeshPhysicalMaterial, Path, Shape } from 'three';
-import BaseObject from './Base';
+import BaseObject from '../../common/objects/Base';
 
 export default class Vase extends BaseObject {
   constructor() {

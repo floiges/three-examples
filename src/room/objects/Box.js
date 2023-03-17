@@ -1,5 +1,5 @@
 import { BoxGeometry, Mesh, MeshLambertMaterial } from 'three';
-import BaseObject from './Base';
+import BaseObject from '../../common/objects/Base';
 
 export default class Box extends BaseObject {
   constructor() {

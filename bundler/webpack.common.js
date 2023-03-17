@@ -5,7 +5,7 @@ const path = require('path')
 const fs = require('fs')
 
 // 入口
-const entrys = ['planet', 'base', 'rain', 'room', 'sphere', 'chinaMap']
+const entrys = ['planet', 'base', 'rain', 'room', 'sphere', 'chinaMap', 'rickMorty']
 
 const generateEntrys = (entrys) => {
   return entrys.reduce((prev, entry) => {
@@ -22,17 +22,22 @@ const generateEntrys = (entrys) => {
 }
 
 const generateHtmlWebPackPlugins = (entrys) => {
-  return entrys.map(entry => new HtmlWebpackPlugin({
-    filename: `${entry}.html`,
-    template: path.resolve(__dirname, '../src/index.html'),
-    // 是否将生成的静态资源插入模板中
-    inject: true,
-    minify: true,
-    // 输出的html文件引入的入口chunk
-    // vendor 是指提取涉及 node_modules 中的公共模块
-    // manifest 是对 vendor 模块做的缓存
-    chunks: ['manifest', 'vendor', entry],
-  }) )
+  return entrys.map(entry => {
+    let filePath = `../src/${entry}`
+    let template = `${filePath}/index.html`
+    const hasTemplate = fs.existsSync(path.resolve(__dirname, template))
+    return new HtmlWebpackPlugin({
+      filename: `${entry}.html`,
+      template: hasTemplate ? path.resolve(__dirname, template) : path.resolve(__dirname, '../src/index.html'),
+      // 是否将生成的静态资源插入模板中
+      inject: true,
+      minify: true,
+      // 输出的html文件引入的入口chunk
+      // vendor 是指提取涉及 node_modules 中的公共模块
+      // manifest 是对 vendor 模块做的缓存
+      chunks: ['manifest', 'vendor', entry],
+    })
+  })
 }
 
 module.exports = {
@@ -110,6 +115,15 @@ module.exports = {
                 }
               }
             ]
+        },
+
+        // Shaders
+        {
+          test: /\.(glsl|vs|fs|vert|frag)$/,
+          exclude: /node_modules/,
+          use: [
+            'raw-loader'
+          ]
         }
       ]
   }
