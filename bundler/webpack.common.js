@@ -5,7 +5,7 @@ const path = require('path')
 const fs = require('fs')
 
 // 入口
-const entrys = ['planet', 'base', 'rain', 'room', 'sphere', 'chinaMap', 'rickMorty']
+const entrys = ['planet', 'base', 'rain', 'room', 'sphere', 'chinaMap', 'rickMorty', '3dText']
 
 const generateEntrys = (entrys) => {
   return entrys.reduce((prev, entry) => {

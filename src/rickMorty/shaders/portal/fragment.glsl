@@ -74,6 +74,12 @@ vec2 UnityPolarCoordinates (vec2 UV, vec2 Center, float RadialScale, float Lengt
   return vec2(radius, angle);
 }
 
+// 为每个可见元素进行着色
+// 我们可以通过uniforms 将数据发送给它，也可以将 Vertex Shader 中的数据发送给它，
+// 我们将这种从 Vertex Shader 发送到 Fragment Shader 的数据称为 varying
+// Fragment Shader 中最直接的指令就是可以使用相同的颜色为所有像素进行着色。
+// 如果只设置了颜色属性，就相当于得到了与 MeshBasicMaterial 等价的材质。
+// 如果我们将光照的位置发送给 Fragment Shader，然后根据像素收到光照影响的多少来给像素上色，此时就能得到与 MeshPhongMaterial 效果等价的材质
 void main() {
   vec2 olduv = gl_FragCoord.xy/resolution.xy ;
   vec2 uv = vUv ;

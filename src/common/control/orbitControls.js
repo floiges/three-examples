@@ -6,4 +6,6 @@ export function addOrbitControls(camera, el) {
   controls.maxPolarAngle = Math.PI * 0.45
   // 禁止平移
   controls.enablePan = false
+
+  return controls
 }
