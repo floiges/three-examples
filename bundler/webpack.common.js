@@ -6,15 +6,17 @@ const fs = require('fs')
 
 // 入口
 const entrys = [
-  'planet',
-  'base',
-  'rain',
-  'room',
-  'sphere',
-  'chinaMap',
-  'rickMorty',
-  '3dText',
-  'hauntedHouse'
+  'planet', // 星球
+  'base', // 基础学习
+  'rain', // 下雨
+  'room', // 小屋
+  'sphere', // 360 球体
+  'chinaMap', // 地铁
+  'rickMorty', // 瑞克和莫蒂
+  '3dText', // 3d 文本
+  'hauntedHouse', // 鬼屋
+  'particles', // 粒子
+  'galaxy', // 星系生成器
 ]
 
 const generateEntrys = (entrys) => {
