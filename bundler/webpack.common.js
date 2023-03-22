@@ -16,7 +16,8 @@ const entrys = [
   '3dText', // 3d 文本
   'hauntedHouse', // 鬼屋
   'particles', // 粒子
-  'galaxy', // 星系生成器
+  'galaxy', // 星系生成器,
+  'scrollBasedAnimation', // 基于滚动
 ]
 
 const generateEntrys = (entrys) => {
