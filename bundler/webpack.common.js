@@ -18,6 +18,9 @@ const entrys = [
   'particles', // 粒子
   'galaxy', // 星系生成器,
   'scrollBasedAnimation', // 基于滚动
+  'physics', // 物流世界
+  'importedModel', // 模型导入
+  'rayCaster', // 射线
 ]
 
 const generateEntrys = (entrys) => {

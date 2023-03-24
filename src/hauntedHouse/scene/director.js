@@ -23,7 +23,7 @@ export default class Director extends Template {
     // 环境光
     addAmbientLight(this.scene)
     // 平行光
-    addDirectionalLight (this.scene)
+    addDirectionalLight(this.scene)
 
     // 轨道控制器
     addOrbitControls(this.camera, this.renderer.domElement)
