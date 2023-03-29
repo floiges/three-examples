@@ -21,6 +21,7 @@ const entrys = [
   'physics', // 物流世界
   'importedModel', // 模型导入
   'rayCaster', // 射线
+  'realisticRender', // 真实渲染
 ]
 
 const generateEntrys = (entrys) => {
