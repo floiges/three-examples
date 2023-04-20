@@ -22,6 +22,7 @@ const entrys = [
   'importedModel', // 模型导入
   'rayCaster', // 射线
   'realisticRender', // 真实渲染
+  'panoramic', // 侦探小游戏
 ]
 
 const generateEntrys = (entrys) => {

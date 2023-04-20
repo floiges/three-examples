@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="keywords" content="three.js,3d,panoramic,vision">
+  <meta name="description" content="three.js,3d,panoramic,vision">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#FFFC00">
+  <title>我是大侦探</title>
+  <script>
+    function Toast(a, b) { var c = document.createElement("div"); c.style.position = "fixed", c.style.maxWidth = "80%", c.style.color = "white", c.style.fontSize = "14px", c.style.boxSizing = "border-box", c.style.background = "rgba(0,0,0,0.76)", c.style.padding = "0.8em 2.618em", c.style.top = "40%", c.style.left = "50%", c.style.zIndex = 999999999, c.style.borderRadius = "3px", c.style.opacity = "0", c.innerText = a, document.body.appendChild(c), c.style.marginLeft = -(c.offsetWidth / 2) + "px", c.style.marginTop = -c.offsetHeight / 2 + "px", setTimeout(function () { c.style.marginLeft = -(c.offsetWidth / 2) + "px", c.style.marginTop = -c.offsetHeight + "px", c.style.transition = "all 0.3s", c.style.opacity = "1", setTimeout(function () { c.style.opacity = "0", c.style.marginTop = -c.offsetHeight / 2 + "px", setTimeout(function () { document.body.removeChild(c) }, 300) }, parseInt(b) || 1618) }, 0) }
+  </script>
+</head>
+<body>
+  <canvas class="webgl"></canvas>
+  <h1 class="title">Find the Thief</h1>
+  <i class="logo"></i>
+  <div class="mask">
+    <div class="modal">
+      <p>你是<b>「明星侦探社」</b>的实习侦探 🕵️‍，接到上级指派任务，到<b>「XX小镇」</b>调查市民<b>「YY」</b>宝石 💎
+        失窃案，根据线人<b>「ZZ」</b>提供的线索，小偷就躲在小镇，快把他找出来，帮YY寻回失窃的宝石吧！</p>
+      <button id="konwButton">接受任务</button>
+    </div>
+  </div>
+</body>
+</html>
