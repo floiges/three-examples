@@ -23,6 +23,8 @@ const entrys = [
   'rayCaster', // 射线
   'realisticRender', // 真实渲染
   'panoramic', // 侦探小游戏
+  'helloCube', // 方块
+  'primitives', // 图元
 ]
 
 const generateEntrys = (entrys) => {
