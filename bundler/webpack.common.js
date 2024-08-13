@@ -25,6 +25,7 @@ const entrys = [
   'panoramic', // 侦探小游戏
   'helloCube', // 方块
   'primitives', // 图元
+  'sceneGraphSun', // 场景图
 ]
 
 const generateEntrys = (entrys) => {
