@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js'
-import AxesGridHelper from '../helpers/AxesGridHelper'
+import AxesGridHelper from '../../common/helpers/AxesGridHelper'
 import { addResizeEventListener, resizeRendererToDisplaySize } from '../../common'
 
 export default class Director {
