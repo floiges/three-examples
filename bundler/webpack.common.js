@@ -28,6 +28,7 @@ const entrys = [
   'sceneGraphSun', // 场景图 太阳
   'sceneGraphTank', // 场景图 坦克
   'texturedCube', //纹理
+  'lightAmbient', // 光源
 ]
 
 const generateEntrys = (entrys) => {

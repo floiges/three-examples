@@ -1,8 +1,8 @@
 import * as THREE from 'three'
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js'
 import { sizes } from '../../common'
-import StringToNumberHelper from '../helpers/StringToNumberHelper'
-import DegRadHelper from '../helpers/DegRadHelper'
+import StringToNumberHelper from '../../common/helpers/StringToNumberHelper'
+import DegRadHelper from '../../common/helpers/DegRadHelper'
 
 export default class Director {
   constructor() {
@@ -91,6 +91,8 @@ export default class Director {
     // 换句话说，0 = 没有偏移，1 = 偏移一个完整的纹理数量
     this.gui.add(texture.offset, 'x', -2, 2, .01).name('texture.offset.x')
     this.gui.add(texture.offset, 'y', -2, 2, .01).name('texture.offset.y')
+    // 通过设置以弧度为单位的 rotation 属性以及用于选择旋转中心的 center 属性，可以设置纹理的旋转。
+    // 它的默认值是0,0，从左下角开始旋转。像偏移一样，这些单位是以纹理大小为单位的，所以将它们设置为 .5，.5 将会围绕纹理中心旋转。
     this.gui.add(texture.center, 'x', -5, 1.5, .01).name('texture.center.x')
     this.gui.add(texture.center, 'y', -5, 1.5, .01).name('texture.center.y')
     this.gui.add(new DegRadHelper(texture, 'rotation'), 'value', -360, 360)
