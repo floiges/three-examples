@@ -29,6 +29,7 @@ const entrys = [
   'sceneGraphTank', // 场景图 坦克
   'texturedCube', //纹理
   'lightAmbient', // 光源
+  'cameraPerspective', // 摄像机
 ]
 
 const generateEntrys = (entrys) => {
