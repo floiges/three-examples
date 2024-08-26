@@ -30,6 +30,8 @@ const entrys = [
   'texturedCube', //纹理
   'lightAmbient', // 光源
   'cameraPerspective', // 摄像机
+  'cameraOrthographics', // 正交相机
+  'cameraOrthographicsCanvasTopLeftOrigin'
 ]
 
 const generateEntrys = (entrys) => {

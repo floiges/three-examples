@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+#tooltip {
+  position: absolute;
+  z-index: 2;
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  visibility: hidden;
+}
+
+.split {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.split>div {
+  width: 100%;
+  height: 100%;
+}
