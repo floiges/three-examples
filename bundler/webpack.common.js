@@ -31,7 +31,8 @@ const entrys = [
   'lightAmbient', // 光源
   'cameraPerspective', // 摄像机
   'cameraOrthographics', // 正交相机
-  'cameraOrthographicsCanvasTopLeftOrigin'
+  'cameraOrthographicsCanvasTopLeftOrigin',
+  'shadowsFake', // 阴影
 ]
 
 const generateEntrys = (entrys) => {
