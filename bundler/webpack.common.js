@@ -33,6 +33,7 @@ const entrys = [
   'cameraOrthographics', // 正交相机
   'cameraOrthographicsCanvasTopLeftOrigin',
   'shadowsFake', // 阴影
+  'shadowDirectionalLight',
 ]
 
 const generateEntrys = (entrys) => {
