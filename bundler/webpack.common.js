@@ -34,6 +34,7 @@ const entrys = [
   'cameraOrthographicsCanvasTopLeftOrigin',
   'shadowsFake', // 阴影
   'shadowDirectionalLight',
+  'mountainTerrain', // 山地地形
 ]
 
 const generateEntrys = (entrys) => {
